@@ -1,20 +1,20 @@
 #!/bin/sh
 
-# බැකප් කරන්න ඕනෙ ෆෝල්ඩර් එක 
+# Directory to be backed up
 SOURCE_DIR="/mnt/host/c/Users/Public/Documents" 
 
-# බැකප් එක සේව් වෙන්න ඕනෙ තැන
+# Directory where the backup will be saved
 BACKUP_DIR="/mnt/host/c/Users/Public/Downloads"
 
-# දවස සහ වෙලාව ගන්න
+# Get current date and time
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 
-# බැකප් ෆයිල් එකේ නම
+# Define the backup file name
 BACKUP_FILE="backup_$TIMESTAMP.tar.gz"
 
-echo "බැකප් එක පටන් ගත්තා..."
+echo "Starting the backup process..."
 
-# බැකප් එක හදමු
+# Create the backup archive
 tar -czf $BACKUP_DIR/$BACKUP_FILE $SOURCE_DIR
 
-echo "බැකප් එක සාර්ථකයි! ෆයිල් එක තියෙන්නේ මෙතන: $BACKUP_DIR/$BACKUP_FILE"
+echo "Backup completed successfully! File saved at: $BACKUP_DIR/$BACKUP_FILE"
